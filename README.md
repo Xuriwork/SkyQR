@@ -1,6 +1,7 @@
 
 
 SkyQR - [Link to site](https://skyqrcode.web.app).
+Video demo is coming later. (Busy at the moment) :)
 
 ### `yarn start`
 
