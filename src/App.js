@@ -17,13 +17,32 @@ const notyf = new Notyf({
 		y: 'top',
 	},
 });
+
 const client = new SkynetClient('https://siasky.net');
+
+const options = {
+	body: 'Your skylink and QR Code are ready!',
+	click_action: 'https://skyqrcode.web.app/',
+	icon: 'https://skyqrcode.web.app/logo192.png',
+};
 
 const App = () => {
 	const [skylink, setSkylink] = useState(null);
 	const [file, setFile] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
+
+	const handleGetPermissionToReceiveNotifications = () => {
+		if (!('Notification' in window)) alert('This browser does not support desktop notification');
+		else if (Notification.permission !== 'denied') Notification.requestPermission();
+	};
+
+	const notifyMe = () => {
+		if (!('Notification' in window)) {
+			return alert('This browser does not support desktop notification')
+		};
+		new Notification('SkyQR', options);
+	};
 
 	const handleOnFileChanged = (e) => setFile(e.target.files[0]);
 	const handleChooseFile = () => fileInputRef.current.click();
@@ -40,6 +59,7 @@ const App = () => {
 			.then((result) => {
 				setSkylink(result.skylink);
 				setLoading(false);
+				notifyMe();
 			})
 			.catch((error) => console.error(error));
 	};
@@ -63,14 +83,25 @@ const App = () => {
 					<button onClick={backToUpload} className='back-to-upload-button'>
 						Back
 					</button>
-				</div> ) : loading ? (
-					<div className='loading-container'>
-						<h2>This could take a while...</h2>
-						<p>In the meanwhile, do some exercise <span role='img' aria-label='muscle'>💪</span></p>
-						<div className='loader'></div>
-					</div>
-				)
-			: (
+				</div>
+			) : loading ? (
+				<div className='loading-container'>
+					<h2>This could take a while...</h2>
+					<p>
+						In the meanwhile, do some exercise{' '}
+						<span role='img' aria-label='muscle'>
+							💪
+						</span>
+					</p>
+					<button
+						onClick={handleGetPermissionToReceiveNotifications}
+						className='notify-button'
+					>
+						Notify meh
+					</button>
+					<div className='loader'></div>
+				</div>
+			) : (
 				<div className='upload-file-container'>
 					<div className='file-input-container'>
 						<input

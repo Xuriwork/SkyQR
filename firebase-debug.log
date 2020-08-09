@@ -1,0 +1,120 @@
+[debug] [2020-08-09T19:55:09.205Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:09.207Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-09T19:55:09.207Z] CLI Version:   8.7.0
+[debug] [2020-08-09T19:55:09.207Z] Platform:      win32
+[debug] [2020-08-09T19:55:09.207Z] Node Version:  v12.17.0
+[debug] [2020-08-09T19:55:09.208Z] Time:          Sun Aug 09 2020 15:55:09 GMT-0400 (GMT-04:00)
+[debug] [2020-08-09T19:55:09.208Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:09.208Z] 
+[debug] [2020-08-09T19:55:09.214Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T19:55:09.215Z] > authorizing via signed-in user
+[debug] [2020-08-09T19:55:09.215Z] [iam] checking project skyqrcode for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-09T19:55:09.218Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyqrcode:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-09T19:55:09.367Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:07 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=59","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:09.368Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/skyqrcode/serviceAccounts/skyqrcode@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-08-09T19:55:09.531Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:07 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:09.532Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyqrcode  
+ 
+[debug] [2020-08-09T19:55:09.716Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:08 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:09.824Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:120:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-08-09T19:55:47.969Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:47.970Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-09T19:55:47.970Z] CLI Version:   8.7.0
+[debug] [2020-08-09T19:55:47.970Z] Platform:      win32
+[debug] [2020-08-09T19:55:47.970Z] Node Version:  v12.17.0
+[debug] [2020-08-09T19:55:47.971Z] Time:          Sun Aug 09 2020 15:55:47 GMT-0400 (GMT-04:00)
+[debug] [2020-08-09T19:55:47.971Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:47.971Z] 
+[debug] [2020-08-09T19:55:47.977Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T19:55:47.978Z] > authorizing via signed-in user
+[debug] [2020-08-09T19:55:47.978Z] [iam] checking project skyqrcode for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-09T19:55:47.980Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyqrcode:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-09T19:55:48.119Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=47","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:48.120Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/skyqrcode/serviceAccounts/skyqrcode@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-08-09T19:55:48.248Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:48.249Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyqrcode  
+ 
+[debug] [2020-08-09T19:55:48.450Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:46 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:48.568Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:120:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-08-09T19:55:52.561Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:52.562Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-09T19:55:52.563Z] CLI Version:   8.7.0
+[debug] [2020-08-09T19:55:52.563Z] Platform:      win32
+[debug] [2020-08-09T19:55:52.563Z] Node Version:  v12.17.0
+[debug] [2020-08-09T19:55:52.564Z] Time:          Sun Aug 09 2020 15:55:52 GMT-0400 (GMT-04:00)
+[debug] [2020-08-09T19:55:52.564Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:52.564Z] 
+[debug] [2020-08-09T19:55:52.571Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T19:55:52.571Z] > authorizing via signed-in user
+[debug] [2020-08-09T19:55:52.571Z] [iam] checking project skyqrcode for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-09T19:55:52.573Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyqrcode:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-09T19:55:52.948Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=41","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:52.949Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/skyqrcode/serviceAccounts/skyqrcode@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-08-09T19:55:53.228Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:53.229Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyqrcode  
+ 
+[debug] [2020-08-09T19:55:53.608Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:53.919Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:120:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-08-09T19:55:56.086Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:56.087Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-09T19:55:56.087Z] CLI Version:   8.7.0
+[debug] [2020-08-09T19:55:56.087Z] Platform:      win32
+[debug] [2020-08-09T19:55:56.087Z] Node Version:  v12.17.0
+[debug] [2020-08-09T19:55:56.088Z] Time:          Sun Aug 09 2020 15:55:56 GMT-0400 (GMT-04:00)
+[debug] [2020-08-09T19:55:56.088Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T19:55:56.088Z] 
+[debug] [2020-08-09T19:55:56.094Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T19:55:56.095Z] > authorizing via signed-in user
+[debug] [2020-08-09T19:55:56.095Z] [iam] checking project skyqrcode for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-09T19:55:56.097Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/skyqrcode:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-09T19:55:56.232Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=41","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:56.233Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/skyqrcode/serviceAccounts/skyqrcode@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-08-09T19:55:56.356Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:56.357Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/skyqrcode  
+ 
+[debug] [2020-08-09T19:55:56.535Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 19:55:54 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T19:55:56.632Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:120:11)
+    at Object.join (path.js:375:7)
+    at Object.checkFunctionsSDKVersion [as fn] (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\xxeno\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
