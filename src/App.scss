@@ -1,124 +1,167 @@
 :root {
- --theme-color: #57b560;
+	--theme-color: #57b560;
 }
 
 %flex-center-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 %button-styles {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    border-radius: 4px;
-    line-height: 48px;
-    font-weight: 400;
-    padding: 0 32px;
-    font-size: 1.1em;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	border-radius: 4px;
+	line-height: 48px;
+	font-weight: 400;
+	padding: 0 32px;
+	font-size: 1.1em;
 
-    img {
-        margin-right: 10px;
-        width: 20px;
-    }
+	img {
+		margin-right: 10px;
+		width: 20px;
+	}
 }
 
 h1 {
-    font-size: 2.6em;
-    color: #4a5568;
+	font-size: 2.6em;
+	color: #4a5568;
 }
 
 h2 {
-    margin-bottom: 20px;
-    font-size: 1.15em;
-    letter-spacing: 0.05em;
-    color: #4a5568;
+	margin-bottom: 20px;
+	font-size: 1.15em;
+	letter-spacing: 0.05em;
+	color: #4a5568;
 }
 
-
 .app-component {
-    @extend %flex-center-column;
-    height: 100%;
+	@extend %flex-center-column;
+	height: 100%;
 
-    .upload-file-container, .qrcode-container {
-        @extend %flex-center-column;
-        max-width: 550px;
-        width: 95%;
-        height: 360px;
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.09);
-        padding: 20px;
-        box-sizing: border-box;
-    }
+	.upload-file-container,
+    .qrcode-container,
+    .loading-container {
+		@extend %flex-center-column;
+		max-width: 550px;
+		width: 95%;
+		height: 360px;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.09);
+		padding: 20px;
+		box-sizing: border-box;
+	}
 }
 
 .logo {
-    width: 40px;
+	width: 40px;
 }
 
 .file-input-container {
-    display: flex;
+	display: flex;
 }
 
 .header {
-    display: flex;
-    margin-bottom: 5px;
+	display: flex;
+	margin-bottom: 5px;
 
-    img {
-        margin-right: 15px;
-    }
+	img {
+		margin-right: 15px;
+	}
 }
 
 span {
-    color: #4a5568;
+	color: #4a5568;
 }
 
 span.filename {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 span.progress {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 .qrcode {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .skylink {
-    margin-top: 20px;
-    font-size: 1.15em;
+	margin-top: 20px;
+	font-size: 1em;
+	color: #82d88a;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .browse-button {
-    @extend %button-styles;
-    background: #ffffff;
-    color: var(--theme-color);
-    box-shadow: 0 0 16px 0 rgba(87,181,96,.1);
-    border: 1px solid var(--theme-color);
-    margin-right: 20px;
+	@extend %button-styles;
+	background: #ffffff;
+	color: var(--theme-color);
+	box-shadow: 0 0 16px 0 rgba(87, 181, 96, 0.1);
+	border: 1px solid var(--theme-color);
+	margin-right: 20px;
 }
 
 .upload-button {
-    @extend %button-styles;
-    background: #57b560;
-    box-shadow: 0 0 16px 0 rgba(87,181,96,.1);
-    text-align: center;
+	@extend %button-styles;
+	background: #57b560;
+	box-shadow: 0 0 16px 0 rgba(87, 181, 96, 0.1);
+	text-align: center;
 }
 
 .back-to-upload-button {
-    @extend %button-styles;
-    line-height: 30px;
-    background: #ffffff;
-    color: var(--theme-color);
-    box-shadow: 0 0 16px 0 rgba(87,181,96,.1);
-    border: 1px solid var(--theme-color);
-    margin-top: 20px;
+	@extend %button-styles;
+	line-height: 30px;
+	background: #ffffff;
+	color: var(--theme-color);
+	box-shadow: 0 0 16px 0 rgba(87, 181, 96, 0.1);
+	border: 1px solid var(--theme-color);
+	margin-top: 20px;
 }
 
 .skynet-link {
-    position: absolute;
-    bottom: 10px;
-    color: var(--theme-color);
+	position: absolute;
+	bottom: 10px;
+	color: var(--theme-color);
+}
+
+.loader {
+    margin-top: 20px;
+	display: flex;
+	width: 2.5em;
+	height: 2.5em;
+	border: 3px solid transparent;
+	border-top-color: var(--theme-color);
+	border-bottom-color: var(--theme-color);
+	border-radius: 50%;
+	animation: spin 1.5s linear infinite;
+	&:before {
+		content: '';
+		display: block;
+		margin: auto;
+		width: 0.4em;
+		height: 0.4em;
+		border: 3px solid var(--theme-color);
+		border-radius: 50%;
+		animation: pulse 1s alternate ease-in-out infinite;
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(0.5);
+	}
+	to {
+		transform: scale(1);
+	}
 }

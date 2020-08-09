@@ -1,38 +1,47 @@
 import React, { useState, useRef } from 'react';
-import './App.scss';
 
 import { SkynetClient } from 'skynet-js';
 import QRCode from 'qrcode.react';
+import { Notyf } from 'notyf';
 
 import UploadIcon from './assets/upload.svg';
 import SkyQRLogo from './assets/skyqr_logo.svg';
 import FolderIcon from './assets/folder.svg';
 
+import './App.scss';
+import 'notyf/notyf.min.css';
+
+const notyf = new Notyf({
+	position: {
+		x: 'right',
+		y: 'top',
+	},
+});
+const client = new SkynetClient('https://siasky.net');
+
 const App = () => {
 	const [skylink, setSkylink] = useState(null);
 	const [file, setFile] = useState(null);
-	const [error, setError] = useState(null);
-	const [progress, setProgress] = useState(null);
+	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
 
 	const handleOnFileChanged = (e) => setFile(e.target.files[0]);
 	const handleChooseFile = () => fileInputRef.current.click();
-	const onUploadProgress = (progress, { loaded, total }) =>
-		setProgress(Math.round(progress * 100));
-	const backToUpload = () => setSkylink(null);
+	const backToUpload = () => {
+		setFile(null);
+		setSkylink(null);
+	};
 
 	const uploadFile = async () => {
-		try {
-			const client = new SkynetClient();
-			const { skylink: _skylink } = await client.upload(file, {
-				onUploadProgress,
-			});
-			setSkylink(_skylink);
-			console.log(_skylink);
-		} catch (_error) {
-			setError(_error);
-			console.log(error);
-		}
+		if (!file) return notyf.error('Upload a file');
+		setLoading(true);
+		await client
+			.upload(file)
+			.then((result) => {
+				setSkylink(result.skylink);
+				setLoading(false);
+			})
+			.catch((error) => console.error(error));
 	};
 
 	return (
@@ -46,12 +55,22 @@ const App = () => {
 			</h2>
 			{skylink ? (
 				<div className='qrcode-container'>
-					<QRCode value={skylink} className='qrcode' fgColor='#57b560' />
+					<QRCode
+						value={`https://siasky.net/${skylink}`}
+						className='qrcode'
+						fgColor='#57b560'
+					/>
 					<button onClick={backToUpload} className='back-to-upload-button'>
 						Back
 					</button>
-				</div>
-			) : (
+				</div> ) : loading ? (
+					<div className='loading-container'>
+						<h2>This could take a while...</h2>
+						<p>In the meanwhile, do some exercise <span role='img' aria-label='muscle'>💪</span></p>
+						<div className='loader'></div>
+					</div>
+				)
+			: (
 				<div className='upload-file-container'>
 					<div className='file-input-container'>
 						<input
@@ -70,10 +89,18 @@ const App = () => {
 						</button>
 					</div>
 					{file && <span className='filename'>Filename: {file.name}</span>}
-					{progress && <span className='progress'>Progress: {progress}</span>}
 				</div>
 			)}
-			{skylink && <span className='skylink'>Skylink: {skylink}</span>}
+			{skylink && (
+				<a
+					className='skylink'
+					href={`https://siasky.net/${skylink}`}
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					Skylink: https://siasky.net/{skylink}
+				</a>
+			)}
 			<a
 				className='skynet-link'
 				href='https://siasky.net'
