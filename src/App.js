@@ -57,7 +57,7 @@ const App = () => {
 						<input
 							type='file'
 							ref={fileInputRef}
-							accept='image/*'
+							accept='image/*,audio/*,/video/*,.pdf'
 							onChange={handleOnFileChanged}
 							style={{ display: 'none' }}
 						/>
