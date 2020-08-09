@@ -22,7 +22,6 @@ const client = new SkynetClient('https://siasky.net');
 
 const options = {
 	body: 'Your skylink and QR Code are ready!',
-	click_action: 'https://skyqrcode.web.app/',
 	icon: 'https://skyqrcode.web.app/logo192.png',
 };
 
@@ -37,7 +36,7 @@ const App = () => {
 		else if (Notification.permission !== 'denied') Notification.requestPermission();
 	};
 
-	const notifyMe = () => {
+	const sendNotification = () => {
 		if (!('Notification' in window)) {
 			return alert('This browser does not support desktop notification')
 		};
@@ -59,7 +58,7 @@ const App = () => {
 			.then((result) => {
 				setSkylink(result.skylink);
 				setLoading(false);
-				notifyMe();
+				sendNotification();
 			})
 			.catch((error) => console.error(error));
 	};
