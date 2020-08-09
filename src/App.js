@@ -32,19 +32,29 @@ const App = () => {
 	const fileInputRef = useRef(null);
 
 	const handleGetPermissionToReceiveNotifications = () => {
-		if (!('Notification' in window)) alert('This browser does not support desktop notification');
-		else if (Notification.permission !== 'denied') Notification.requestPermission();
+		if (!('Notification' in window))
+			alert('This browser does not support desktop notification');
+		else if (Notification.permission !== 'denied')
+			Notification.requestPermission();
 	};
 
 	const sendNotification = () => {
 		if (!('Notification' in window)) {
-			return alert('This browser does not support desktop notification')
-		};
+			return alert('This browser does not support desktop notification');
+		}
 		new Notification('SkyQR', options);
 	};
 
 	const handleOnFileChanged = (e) => setFile(e.target.files[0]);
 	const handleChooseFile = () => fileInputRef.current.click();
+	const allowDrop = (e) => e.preventDefault();
+
+	const handleDrop = (e) => {
+		e.preventDefault();
+		const file = e.dataTransfer.files[0];
+		setFile(file);
+	};
+
 	const backToUpload = () => {
 		setFile(null);
 		setSkylink(null);
@@ -101,12 +111,21 @@ const App = () => {
 					<div className='loader'></div>
 				</div>
 			) : (
-				<div className='upload-file-container'>
+				<div
+					className='upload-file-container'
+					onDrop={handleDrop}
+					onDragOver={allowDrop}
+					onClick={handleChooseFile}
+				>
+					<div className='droparea'></div>
+					<p style={{ marginBottom: '10px', zIndex: 2, textAlign: 'center' }}>
+						Upload any media file by dragging it into the dropzone
+					</p>
 					<div className='file-input-container'>
 						<input
 							type='file'
 							ref={fileInputRef}
-							accept='image/*,audio/*,/video/*,.pdf'
+							accept='image/*,audio/*,video/*,.pdf'
 							onChange={handleOnFileChanged}
 							style={{ display: 'none' }}
 						/>
@@ -118,6 +137,7 @@ const App = () => {
 							Upload
 						</button>
 					</div>
+
 					{file && <span className='filename'>Filename: {file.name}</span>}
 				</div>
 			)}
