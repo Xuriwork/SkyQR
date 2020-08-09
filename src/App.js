@@ -118,7 +118,14 @@ const App = () => {
 					onClick={handleChooseFile}
 				>
 					<div className='droparea'></div>
-					<p style={{ marginBottom: '10px', zIndex: 2, textAlign: 'center' }}>
+					<p
+						style={{
+							marginBottom: '10px',
+							zIndex: 2,
+							textAlign: 'center',
+							color: '#5174537e',
+						}}
+					>
 						Upload any media file by dragging it into the dropzone
 					</p>
 					<div className='file-input-container'>
