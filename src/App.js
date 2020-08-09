@@ -55,11 +55,6 @@ const App = () => {
 		setFile(file);
 	};
 
-	const backToUpload = () => {
-		setFile(null);
-		setSkylink(null);
-	};
-
 	const uploadFile = async () => {
 		if (!file) return notyf.error('Upload a file');
 		setLoading(true);
@@ -71,6 +66,11 @@ const App = () => {
 				sendNotification();
 			})
 			.catch((error) => console.error(error));
+	};
+
+	const backToUpload = () => {
+		setFile(null);
+		setSkylink(null);
 	};
 
 	return (
