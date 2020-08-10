@@ -1,6 +1,8 @@
-
+# Try it at https://skyqrcode.web.app
 
 SkyQR - [Link to site](https://skyqrcode.web.app).
+
+This is a web app where the user can upload a media file of various types to the skynet, which then returns a link to the uploaded media and provides a QR code for ease of use.
 
 ### `yarn start`
 
