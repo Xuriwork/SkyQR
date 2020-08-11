@@ -1,28 +1,22 @@
+<<<<<<< HEAD
 # Try it at https://skyqrcode.web.app
+=======
+# SkyQR
 
-SkyQR - [Link to site](https://skyqrcode.web.app).
+[Link to site](https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html)
+>>>>>>> 4e4b46faccbda5722e27c702b787c2808f56a4da
 
+Centralized platform link: https://skyqrcode.web.app  
+Decentralized platform link: https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html
+
+<<<<<<< HEAD
 This is a web app where the user can upload a media file of various types to the skynet, which then returns a link to the uploaded media and provides a QR code for ease of use.
 
 ### `yarn start`
+=======
+Video demo is coming later. (A bit busy at the moment) :)
+>>>>>>> 4e4b46faccbda5722e27c702b787c2808f56a4da
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Use `yarn start` to start the development server.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use `yarn build` to compile the application to `/public` directory.

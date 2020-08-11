@@ -73,6 +73,8 @@ const App = () => {
 		setSkylink(null);
 	};
 
+	const _skylink = `https://siasky.net/${skylink}`;
+
 	return (
 		<div className='app-component'>
 			<span className='header'>
@@ -85,7 +87,7 @@ const App = () => {
 			{skylink ? (
 				<div className='qrcode-container'>
 					<QRCode
-						value={`https://siasky.net/${skylink}`}
+						value={_skylink}
 						className='qrcode'
 						fgColor='#57b560'
 					/>
@@ -151,11 +153,11 @@ const App = () => {
 			{skylink && (
 				<a
 					className='skylink'
-					href={`https://siasky.net/${skylink}`}
+					href={_skylink}
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					Skylink: https://siasky.net/{skylink}
+					Skylink: {_skylink}
 				</a>
 			)}
 			<a
