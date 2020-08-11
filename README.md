@@ -1,6 +1,6 @@
 # SkyQR
 
-[Link to site](https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html).
+[Link to site](https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html)
 
 Centralized platform link: https://skyqrcode.web.app  
 Decentralized platform link: https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html
