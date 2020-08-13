@@ -4,9 +4,12 @@ import { SkynetClient } from 'skynet-js';
 import QRCode from 'qrcode.react';
 import { Notyf } from 'notyf';
 
+import SavedSkyLinks from './SavedSkyLinks';
+
 import UploadIcon from '../assets/upload.svg';
 import SkyQRLogo from '../assets/skyqr_logo.svg';
 import FolderIcon from '../assets/folder.svg';
+
 
 const notyf = new Notyf({
 	position: {
@@ -22,11 +25,12 @@ const options = {
 	icon: 'https://skyqrcode.web.app/logo192.png',
 };
 
-const Home = () => {
-    const [skylink, setSkylink] = useState('dsda');
+const Home = ({ showSavedSkylinks, viewHome }) => {
+	const [skylink, setSkylink] = useState(null);
 	const [file, setFile] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
+	const _skylink = `https://siasky.net/${skylink}`;
 
 	const handleGetPermissionToReceiveNotifications = () => {
 		if (!('Notification' in window)) {
@@ -71,106 +75,106 @@ const Home = () => {
 		setSkylink(null);
 	};
 
-	const _skylink = `https://siasky.net/${skylink}`;
-
-    return (
+	return (
 		<div className='home-component'>
-			<span className='header'>
-				<img src={SkyQRLogo} alt='logo' className='logo' />
-				<h1>SkyQR</h1>
-			</span>
-			<h2>
-				QR in the Sky<span style={{ color: '#57b560' }}>link</span>
-			</h2>
-			{skylink ? (
-				<div className='qrcode-container'>
-					<QRCode
-						value={_skylink}
-						className='qrcode'
-						fgColor='#57b560'
-					/>
-					<button onClick={backToUpload} className='back-to-upload-button'>
-						Back
-					</button>
-				</div>
-			) : loading ? (
-				<div className='loading-container'>
-					<h2>This could take a while...</h2>
-					<p>
-						In the meanwhile, do some exercise{' '}
-						<span role='img' aria-label='muscle'>
-							💪
-						</span>
-					</p>
-					<button
-						onClick={handleGetPermissionToReceiveNotifications}
-						className='notify-button'
-					>
-						Notify meh
-					</button>
-					<div className='loader'></div>
-				</div>
+			{showSavedSkylinks ? (
+				<SavedSkyLinks viewHome={viewHome} />
 			) : (
-				<div
-					className='upload-file-container'
-					onDrop={handleDrop}
-					onDragOver={allowDrop}
-					onClick={handleChooseFile}
-				>
-					<div className='droparea'></div>
-					<p
-						style={{
-							marginBottom: '10px',
-							zIndex: 2,
-							textAlign: 'center',
-							color: '#5174537e',
-						}}
+				<>
+					<span className='header'>
+						<img src={SkyQRLogo} alt='logo' className='logo' />
+						<h1>SkyQR</h1>
+					</span>
+					<h2>
+						QR in the Sky<span style={{ color: '#57b560' }}>link</span>
+					</h2>
+					{skylink ? (
+						<div className='qrcode-container'>
+							<QRCode value={_skylink} className='qrcode' fgColor='#57b560' />
+							<button onClick={backToUpload} className='back-to-upload-button'>
+								Back
+							</button>
+						</div>
+					) : loading ? (
+						<div className='loading-container'>
+							<h2>This could take a while...</h2>
+							<p>
+								In the meanwhile, do some exercise{' '}
+								<span role='img' aria-label='muscle'>
+									💪
+								</span>
+							</p>
+							<button
+								onClick={handleGetPermissionToReceiveNotifications}
+								className='notify-button'
+							>
+								Notify meh
+							</button>
+							<div className='loader'></div>
+						</div>
+					) : (
+						<div
+							className='upload-file-container'
+							onDrop={handleDrop}
+							onDragOver={allowDrop}
+							onClick={handleChooseFile}
+						>
+							<div className='droparea'></div>
+							<p
+								style={{
+									marginBottom: '10px',
+									zIndex: 2,
+									textAlign: 'center',
+									color: '#5174537e',
+								}}
+							>
+								Upload any media file by dragging it into the dropzone
+							</p>
+							<div className='file-input-container'>
+								<input
+									type='file'
+									ref={fileInputRef}
+									accept='image/*,audio/*,video/*,.pdf'
+									onChange={handleOnFileChanged}
+									style={{ display: 'none' }}
+								/>
+								<button onClick={handleChooseFile} className='browse-button'>
+									<img src={FolderIcon} alt='' /> Browse
+								</button>
+								<button onClick={uploadFile} className='upload-button'>
+									<img src={UploadIcon} alt='' />
+									Upload
+								</button>
+							</div>
+
+							{file && <span className='filename'>Filename: {file.name}</span>}
+						</div>
+					)}
+					{skylink && (
+						<a
+							className='skylink'
+							href={_skylink}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							Skylink: {_skylink}
+						</a>
+					)}
+					<a
+						className='skynet-link'
+						href='https://siasky.net'
+						target='_blank'
+						rel='noopener noreferrer'
 					>
-						Upload any media file by dragging it into the dropzone
-					</p>
-					<div className='file-input-container'>
-						<input
-							type='file'
-							ref={fileInputRef}
-							accept='image/*,audio/*,video/*,.pdf'
-							onChange={handleOnFileChanged}
-							style={{ display: 'none' }}
-						/>
-						<button onClick={handleChooseFile} className='browse-button'>
-							<img src={FolderIcon} alt='' /> Browse
-						</button>
-						<button onClick={uploadFile} className='upload-button'>
-							<img src={UploadIcon} alt='' />
-							Upload
-						</button>
-					</div>
-
-					{file && <span className='filename'>Filename: {file.name}</span>}
-				</div>
+						POWERED BY SIA SKYNET{' '}
+						<span role='img' aria-label='Green heart'>
+							💚
+						</span>
+					</a>
+				</>
 			)}
-			{skylink && (
-				<a
-					className='skylink'
-					href={_skylink}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Skylink: {_skylink}
-				</a>
-			)}
-			<a
-				className='skynet-link'
-				href='https://siasky.net'
-				target='_blank'
-				rel='noopener noreferrer'
-			>
-				POWERED BY SIA SKYNET{' '}
-				<span role='img' aria-label='Green heart'>
-					💚
-				</span>
-			</a>
 		</div>
-    )
-}
+	);
+};
 
-export default Home
+export default Home;

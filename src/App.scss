@@ -52,22 +52,22 @@ h2 {
 .more-button-container {
 	width: 40px;
 	height: 35px;
-  
+
 	button {
-	  width: 100%;
-	  height: 100%;
-	  background-color: #85d48d;
-	  border-radius: 4px;
-  
-	  img {
-		width: 16px;
-		vertical-align: -3px;
-	  }
+		width: 100%;
+		height: 100%;
+		background-color: #85d48d;
+		border-radius: 4px;
+
+		img {
+			width: 16px;
+			vertical-align: -3px;
+		}
 	}
-  }
-  
-  .more-items-dropdown {
-	width: 120px;
+}
+
+.more-items-dropdown {
+	min-width: 120px;
 	position: absolute;
 	background-color: #ffffff;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07);
@@ -91,15 +91,15 @@ h2 {
 			}
 		}
 	}
-  }
+}
 
 .home-component {
 	@extend %flex-center-column;
 	height: 100%;
 
 	.upload-file-container,
-    .qrcode-container,
-    .loading-container {
+	.qrcode-container,
+	.loading-container {
 		@extend %flex-center-column;
 		max-width: 550px;
 		width: 95%;
@@ -123,11 +123,64 @@ h2 {
 	span.filename {
 		margin-top: 15px;
 	}
-	
+
 	span.progress {
 		margin-top: 15px;
 	}
-	
+}
+
+.saved-skylinks-component {
+	max-width: 400px;
+	width: 95%;
+	height: 500px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.09);
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+
+	> div {
+		display: flex;
+		align-items: center;
+
+		button {
+			background-color: transparent;
+			width: 25px;
+			height: 30px;
+			margin-right: 15px;
+		}
+		
+		img {
+			vertical-align: -12px;
+			cursor: pointer;
+		}
+	}
+
+	h1 {
+		font-size: 1.8em;
+	}
+
+	ul {
+		overflow: auto;
+		height: 85%;
+		margin-top: 15px;
+
+		&::-webkit-scrollbar-track {
+			background-color: #e4e4e4;
+		}
+
+		&::-webkit-scrollbar {
+			width: 5px;
+			background-color: #f5f5f5;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #6cc775;
+		}
+
+		li {
+			font-size: 1.15em;
+		}
+	}
 }
 
 .droparea {
@@ -208,14 +261,14 @@ h2 {
 	line-height: 35px;
 	font-weight: 400;
 	font-size: 1.1em;
-    border-radius: 4px;
-    margin-top: 10px;
-    background-color: #e8ffe8;
-    border: 1px solid var(--theme-color);
+	border-radius: 4px;
+	margin-top: 10px;
+	background-color: #e8ffe8;
+	border: 1px solid var(--theme-color);
 }
 
 .loader {
-    margin-top: 20px;
+	margin-top: 20px;
 	display: flex;
 	width: 2.5em;
 	height: 2.5em;

@@ -3,7 +3,7 @@ import React, { useState, useRef, useContext } from 'react';
 import MoreIcon from '../assets/more.svg';
 import { UserContext } from '../context/UserProvider';
 
-const Navbar = () => {
+const Navbar = ({ viewSavedSkylinks }) => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const { user, handleSignOut } = useContext(UserContext);
 	const { doOpenAuth } = useConnect();
@@ -37,6 +37,7 @@ const Navbar = () => {
 						) : (
 							<li onClick={handleSignIn}>Sign In</li>
 						)}
+						<li onClick={viewSavedSkylinks}>Saved Skylinks</li>
 					</ul>
 				</div>
 			)}
