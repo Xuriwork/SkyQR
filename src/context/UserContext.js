@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { AppConfig, UserSession } from 'blockstack';
 import { Connect } from '@blockstack/connect';
+import { userSession } from '../blockstack/constants';
 
 export const UserContext = React.createContext();
-
-const appConfig = new AppConfig(['store_write', 'publish_data']);
-const userSession = new UserSession({ appConfig });
 
 export const UserProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
@@ -40,7 +37,7 @@ export const UserProvider = ({ children }) => {
 	};
 
 	return (
-		<UserContext.Provider value={{ user, handleSignOut }}>
+		<UserContext.Provider value={{ user, userSession, handleSignOut }}>
 			<Connect authOptions={authOptions}>
 				{children}
 			</Connect>
