@@ -8,7 +8,7 @@ import './App.scss';
 import 'notyf/notyf.min.css';
 
 const App = () => {
-	const [showSavedSkylinks, setShowSavedSkylinks] = useState(true);
+	const [showSavedSkylinks, setShowSavedSkylinks] = useState(false);
 	const viewSavedSkylinks = () => setShowSavedSkylinks(true);
 	const viewHome = () => setShowSavedSkylinks(false);
 
