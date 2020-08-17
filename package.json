@@ -8,7 +8,7 @@
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
-		"blockstack": "^21.1.0",
+		"blockstack": "git://github.com/blockstack/blockstack.js.git#3124e05",
 		"firebase": "^7.17.2",
 		"node-fetch": "^2.6.0",
 		"node-sass": "^4.14.1",
@@ -16,6 +16,7 @@
 		"qrcode.react": "^1.0.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-hook-form": "^6.4.0",
 		"react-scripts": "3.4.1",
 		"skynet-js": "^0.1.0",
 		"uuid": "^8.3.0"

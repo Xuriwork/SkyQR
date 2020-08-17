@@ -3324,10 +3324,9 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blockstack@^21.1.0:
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/blockstack/-/blockstack-21.1.0.tgz#4c0b2678647f7c697efe98f50e24482a1dc0cf09"
-  integrity sha512-K3n161dRhDqBPzSe1gbg0+O7Xd5u00p6Ort2O+DAPMqs3aIy6XI/NhJgs7pestetL/iaGhaJ9EdDUHP4nU4zVQ==
+"blockstack@git://github.com/blockstack/blockstack.js.git#3124e05":
+  version "21.1.1"
+  resolved "git://github.com/blockstack/blockstack.js.git#3124e05ce169a5fcd531772c31f81e1c512cdec3"
   dependencies:
     "@types/bn.js" "^4.11.6"
     "@types/cheerio" "^0.22.13"
@@ -10132,6 +10131,11 @@ react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
+
+react-hook-form@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.4.0.tgz#fc1a77fc636fd6cc5e2d86290f9687d7faf40a4d"
+  integrity sha512-dHpK316sukVSq8FF2BdGjhyRl0Si/O5upzWUU9NellM2ibKqS2SBcjq61hak4NpVN/9xIPq+nssb8/l2EGaFRg==
 
 react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"

@@ -1,38 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { fetchSkylinks, saveSkylinks } from '../blockstack/methods';
-import { UserContext } from '../context/UserContext';
+import React, { useEffect, useState } from 'react';
 import ArrowLeft from '../assets/arrow-left-circle.svg';
+import { useForm } from "react-hook-form";
 
 const SavedSkyLinks = ({ viewHome }) => {
     const [loading, setLoading] = useState(true);
     const [skylinks, setSkylinks] = useState([]);
-    const [link, setLink] = useState('');
-    const [name, setName] = useState('');
-    const { userSession, user } = useContext(UserContext);
+    const { register, handleSubmit } = useForm();
 
-    const handleSaveSkylink = async (e) => {
-        e.preventDefault();
-        if (!link.trim() || !name.trim()) return;
-        console.log(name, link);
-        saveSkylinks(userSession, skylinks.concat([{ name, link }]));
-    };
+    const handleSaveSkylink = handleSubmit(({ name, link }) => {
+        const newSkylinks = skylinks.concat[{ name, link }];
+        localStorage.setItem('savedSkylinks', JSON.stringify(newSkylinks));
+    });
 
     useEffect(() => {
-        const getSkylinks = async () => {
-            const response = await fetchSkylinks(userSession, user.username);
-            console.log(response);
-
-            if (response.skylinks === null) {
-                console.log('Not found');
-            } else {
-                console.log(response.skylinks);
-                setSkylinks(response.skylinks)
-            };
-            setLoading(false);
-        }
-        if (user) getSkylinks();
-
-    }, [user, userSession]);
+        const savedSkylinks = localStorage.getItem('savedSkylinks');
+        setSkylinks(JSON.parse(savedSkylinks));
+        setLoading(false);
+    }, []);
 
     if (loading) return <div>Loading...</div>;
 
@@ -47,13 +31,13 @@ const SavedSkyLinks = ({ viewHome }) => {
             <form>
                 <div>
                     <label>Name</label>
-                    <input type='text' name='name' onChange={(e) => setName(e.target.value)} />
+                    <input type='text' name='name' ref={register({ required: true })} />
                 </div>
                 <div>
                     <label>Skylink</label>
-                    <input type='text' name='skylink' onChange={(e) => setLink(e.target.value)} />
+                    <input type='text' name='skylink' ref={register({ required: true })} />
                 </div>
-                <button onClick={handleSaveSkylink}>Save</button>
+                <button onClick={handleSaveSkylink}>Add</button>
             </form>
             <ul>
                 {skylinks.map((skylink, index) => (
