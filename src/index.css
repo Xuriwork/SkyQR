@@ -9,6 +9,10 @@ body {
   font-family: Cabin, Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: #6b6b6b;
+}
+
 button {
   border: none;
   font-family: Cabin, sans-serif;

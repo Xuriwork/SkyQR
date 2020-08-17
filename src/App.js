@@ -13,9 +13,19 @@ const App = () => {
 
 	return (
 		<>
-			🇧🇾
 			<Navbar viewSavedSkylinks={viewSavedSkylinks} />
 			<Home showSavedSkylinks={showSavedSkylinks} viewHome={viewHome} />
+			<a
+				className='skynet-link'
+				href='https://siasky.net'
+				target='_blank'
+				rel='noopener noreferrer'
+			>
+				POWERED BY SIA SKYNET{' '}
+				<span role='img' aria-label='Green heart'>
+					💚
+				</span>
+			</a>
 		</>
 	);
 };

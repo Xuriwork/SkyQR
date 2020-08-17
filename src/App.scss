@@ -137,6 +137,7 @@ h2 {
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
+	position: relative;
 
 	form {
 		margin-top: 5px;
@@ -179,7 +180,7 @@ h2 {
 			height: 30px;
 			margin-right: 15px;
 		}
-		
+
 		img {
 			vertical-align: -12px;
 			cursor: pointer;
@@ -187,12 +188,14 @@ h2 {
 	}
 
 	h1 {
-		font-size: 1.8em;
+		font-size: 1.6em;
+		font-weight: 500;
 	}
 
 	ul {
 		overflow: auto;
-		height: 85%;
+		height: 100%;
+		max-height: 240px;
 		margin-top: 10px;
 
 		&::-webkit-scrollbar-track {
@@ -209,7 +212,81 @@ h2 {
 		}
 
 		li {
-			font-size: 1.15em;
+			font-size: 1em;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			a:hover {
+				color: #6cc775;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			
+			&:not(:first-of-type) {
+				margin-top: 8px;
+			}
+
+			button {
+				width: 20px;
+				height: 20px;
+				background-color: transparent;
+
+				&:nth-of-type(1) {
+					margin-right: 10px;
+				}
+
+				img:nth-of-type(2) {
+					margin-left: 10px;
+				}
+			}
+
+			img {
+				width: 20px;
+			}
+		}
+	}
+
+	.skylink-qr-code-preview {
+		@extend %flex-center-column;
+		position: absolute;
+		z-index: 2;
+		background: #a1e2a8b4;
+		padding: 10px;
+		width: 95%;
+		height: 136px;
+		top: 60px;
+		margin-left: -20px;
+
+		.close-button {
+			position: absolute;
+			right: 0;
+			top: 10px;
+			width: 20px;
+			height: 20px;
+			opacity: 0.3;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&:before,
+			&:after {
+				position: absolute;
+				content: ' ';
+				height: 20px;
+				width: 2px;
+				background-color: rgb(29, 29, 29);
+			}
+
+			&:before {
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				transform: rotate(-45deg);
+			}
 		}
 	}
 }
@@ -285,6 +362,8 @@ h2 {
 	position: absolute;
 	bottom: 10px;
 	color: var(--theme-color);
+	width: 100%;
+	text-align: center;
 }
 
 .notify-button {
