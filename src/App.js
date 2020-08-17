@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import './App.scss';
 import 'notyf/notyf.min.css';
 
-const LinkToSiaSky = () => (
+const LinkToSkynet = () => (
 	<a
 		className='skynet-link'
 		href='https://siasky.net'
@@ -29,7 +29,7 @@ const App = () => {
 		<>
 			<Navbar viewSavedSkylinks={viewSavedSkylinks} />
 			<Home showSavedSkylinks={showSavedSkylinks} viewHome={viewHome} />
-			<LinkToSiaSky />
+			<LinkToSkynet />
 		</>
 	);
 };
