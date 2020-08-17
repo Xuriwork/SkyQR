@@ -26,11 +26,6 @@ const SavedSkyLinks = ({ viewHome }) => {
 		reset();
 	});
 
-	window.onclick = (e) => {
-		const modalOverlay = document.getElementById('modal-overlay');
-		if (e.target === modalOverlay) setSkylinkToRemove(null);
-	};
-
 	const handleConfirmDelete = (item) => setSkylinkToRemove(item);
     const handleShowAQRCode = (item) => setSkylinkQR(item.skylink);
     const handleCloseAQRCode = () => setSkylinkQR(null);

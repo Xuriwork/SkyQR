@@ -1,7 +1,12 @@
 import React from 'react'
 
 const ConfirmDeleteModal = ({ skylinks, skylinkToRemove, setSkylinkToRemove, setSkylinks }) => {
-    const nameOfItem = skylinkToRemove.name;
+    
+    window.onclick = (e) => {
+		const modalOverlay = document.getElementById('modal-overlay');
+		if (e.target === modalOverlay) setSkylinkToRemove(null);
+    };
+    
     const handleRemoveItem = () => {
         const filteredSkylinks = skylinks.filter((skylink) => skylink !== skylinkToRemove);
         setSkylinks(filteredSkylinks);
@@ -15,7 +20,9 @@ const ConfirmDeleteModal = ({ skylinks, skylinkToRemove, setSkylinkToRemove, set
 				<div className='modal'>
 					<p>
 						Are you sure you want to delete{' '}
-						<span style={{ color: '#82d88a', marginRight: '2px' }}>{nameOfItem}</span>?
+						<span style={{ color: '#82d88a', marginRight: '2px' }}>
+                            {skylinkToRemove.name}
+                        </span>?
 					</p>
 					<div className='buttons-container'>
 						<button onClick={handleRemoveItem}>Yes, I'm sure</button>
