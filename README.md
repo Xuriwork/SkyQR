@@ -1,9 +1,8 @@
 # SkyQR
 
-[Link to site](https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html)
+[Link to site](https://siasky.net/_AB3UqVVaZLhM0P7S9qIOMJ1iclRAxBSBPht1jqb_A1QMg)
 
-Centralized platform link: https://skyqrcode.web.app  
-Decentralized platform link: https://siasky.net/fAUoy7azLpk-4BW1sxGgbMu3XJd1bgYC9aN2EyO2570_HQ/index.html
+Decentralized platform link: https://siasky.net/_AB3UqVVaZLhM0P7S9qIOMJ1iclRAxBSBPht1jqb_A1QMg
 
 Video demo is coming later. (A bit busy at the moment) :)
 
